@@ -11,8 +11,8 @@ import addNews from "./page/admin/news/add";
 import user from "./page/admin/user";
 
 const router = new Navigo("/", { linksSelector: "a" });
-const printf = (content) => {
-    document.querySelector("#products").innerHTML = content.render();
+const printf = (content, id) => {
+    document.querySelector("#products").innerHTML = content.render(id);
 };
 router.on({
 // Nếu user truy cập vào đường dẫn thì user sẽ làm cái việc gì đấy
@@ -27,8 +27,8 @@ router.on({
         printf(ProductPage);
     },
     "/product/:id": ({ data }) => {
-        const { id } = data;
-        printf(DetailPage.render(id));
+        // const { id } = data;
+        printf(DetailPage, data.id);
     },
     "/signin": () => {
         printf(SignInPage);
