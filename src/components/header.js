@@ -8,13 +8,13 @@ const Headers = {
         </div>
         <div class = "flex justify-between bg-orange-500">
             <div>
-                <ul class="flex gap-8 ">
-                <li class=""><a href="/" class="block px-4 py-5 hover:bg-indigo-500 hover:text-white">Home Page</a></li>
-                <li><a href="/about" class="block px-4 py-5 hover:bg-indigo-500 hover:text-white ">About Page</a></li>
-                <li><a href="/product" class="block px-4 py-5 hover:bg-indigo-500 hover:text-white ">Product Page</a></li>
+                <ul class="flex gap-3 ">
+                <li class=""><a href="/" class="block px-4 py-3 hover:bg-indigo-500 hover:text-white">Trang chủ</a></li>
+                <li><a href="/about" class="block px-4 py-3 hover:bg-indigo-500 hover:text-white ">About Page</a></li>
+                <li><a href="/product" class="block px-4 py-3 hover:bg-indigo-500 hover:text-white ">Product Page</a></li>
                 </ul>
             </div>
-            <div class="px-4 py-5">
+            <div class="px-4 py-3">
                 <form action="#" method="post">
                     <input type="text" class="h-6 w-40 outline-none rounded-lg hover:border-orange-600">
                     <button class="h-6 w-15 text-white bg-black px-3 rounded-lg">Tìm kiếm</button>
