@@ -1,11 +1,12 @@
-import news from "../data";
+import axios from "axios";
 
 const News = {
-    render() {
+    async render() {
+        const { data } = await axios.get("http://localhost:3001/post");
         return /* html */`
         <h2 class="font-semibold text-blue-900 my-4 uppercase text-2xl">Tin tức học tập</h2>
         <div class="grid grid-cols-3 gap-8">
-            ${news.map((post) => `
+            ${data.map((post) => `
             <div class="border p-3">
                 <a href="/product/${post.id}"><img src="${post.img}" alt="" /></a>
                 <h3 class="my-3"><a href="/product/${post.id}" class="font-semibold text-orange-500 text-lg">${post.title}</a></h3>

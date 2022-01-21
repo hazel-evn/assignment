@@ -11,8 +11,9 @@ import addNews from "./page/admin/news/add";
 import user from "./page/admin/user";
 
 const router = new Navigo("/", { linksSelector: "a" });
-const printf = (content, id) => {
-    document.querySelector("#products").innerHTML = content.render(id);
+const printf = async (content, id) => {
+    document.querySelector("#products").innerHTML = await content.render(id);
+    if (content.afterRender) await content.afterRender();
 };
 router.on({
 // Nếu user truy cập vào đường dẫn thì user sẽ làm cái việc gì đấy
