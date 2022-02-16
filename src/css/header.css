@@ -15,7 +15,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgb(221, 84, 84);
+  background: rgb(255, 255, 255);
   padding: 0 80px;
 }
 .header_menu ul {

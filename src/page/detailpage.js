@@ -6,7 +6,7 @@ const DetailPage = {
     render(id) {
         const result = data.find((post) => post.id === id);
         return `
-        <div class="max-w-5xl mx-auto">
+        <div class="container">
             <header>
                 ${Headers.render()}
             </header>

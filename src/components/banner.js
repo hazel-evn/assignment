@@ -1,7 +1,7 @@
 const Banner = {
     render() {
         return `
-           <img src="https://picsum.photos/2000/400" alt="">
+           <img src="./src/images/banner.jpg" width="100%" height="450" >
         `;
     },
 };
