@@ -28,3 +28,7 @@ a {
 .header_auth ion-icon {
   font-size: 30px;
 }
+.header_menu a:hover {
+  color: #f03030;
+  transition: all 0.3s ease;
+}

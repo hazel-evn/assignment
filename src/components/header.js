@@ -4,7 +4,7 @@ const Headers = {
         <header class="header">
             <div class="header_logo">
                 <a href="/#">
-                <img src="./src/images/logo_black.png" alt="" height="100">
+                <img src="../src/images/logo_black.png" alt="" height="100">
                 </a>
             </div>
             <div class="header_menu">

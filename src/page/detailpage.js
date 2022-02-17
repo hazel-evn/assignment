@@ -1,23 +1,23 @@
-import data from "../data";
+import { get } from "../api/product";
 import Headers from "../components/header";
 import Footer from "../components/footer";
 
 const DetailPage = {
-    render(id) {
-        const result = data.find((post) => post.id === id);
+    async render(id) {
+        const { data } = await get(id);
         return `
-        <div class="container">
+        <div class="container-2xl">
             <header>
                 ${Headers.render()}
             </header>
             <main>
                 <div>
-                    <h1>${result.title}</h1>
-                    <img src="${result.img}" alt="" />
-                    <p>${result.desc}</p>
+                    <h1>${data.title}</h1>
+                    <img src="${data.img}" alt="" />
+                    <p>${data.price}</p>
                 </div>
             </main>
-            <footer>
+            <footer class="site-footer">
                 ${Footer.render()}
             </footer>
         </div>
