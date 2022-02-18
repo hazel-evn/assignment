@@ -6,8 +6,8 @@ import Footer from "../components/footer";
 const HomePage = {
     async render() {
         return /* html */`
-        <div class="container-2xl">
-            <header>
+        <div>
+            <header class="header">
                 ${Headers.render()}
             </header>
             <main>

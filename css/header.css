@@ -32,3 +32,6 @@ a {
   color: #f03030;
   transition: all 0.3s ease;
 }
+.header_logo img {
+  height: 100px;
+}

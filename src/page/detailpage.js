@@ -6,7 +6,7 @@ const DetailPage = {
     async render(id) {
         const { data } = await get(id);
         return `
-        <div class="container-2xl">
+        <div >
             <header>
                 ${Headers.render()}
             </header>
