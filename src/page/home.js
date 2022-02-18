@@ -1,5 +1,5 @@
 import Banner from "../components/banner";
-import detailProduct from "../components/product";
+import Product from "../components/product";
 import Headers from "../components/header";
 import Footer from "../components/footer";
 
@@ -15,7 +15,7 @@ const HomePage = {
                     ${Banner.render()}
                 </div>
                 <div class="news">
-                    ${await detailProduct.render()}
+                    ${await Product.render()}
                 </div>
             </main>
             <footer class="site-footer">

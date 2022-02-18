@@ -1,0 +1,26 @@
+.blog {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.article-border {
+  border: 1px solid #303030;
+}
+.blogs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.blogs_item {
+  width: 300px;
+}
+.blogs_item img {
+  max-width: 300px;
+}
+.blogs_item h6 {
+  height: 40px;
+  width: auto;
+  font-size: 14px;
+}

@@ -10,8 +10,8 @@ const Headers = {
             <div class="header_menu">
                 <ul>
                 <li><a href="/#">home</a></li>
-                <li><a href="/#about">product</a></li>
-                <li><a href="/#product">Blogs</a></li>
+                <li><a href="/#product">product</a></li>
+                <li><a href="/#blog">Blogs</a></li>
                 <li><a href="/#contact">contact</a></li>
                 </ul>
             </div>

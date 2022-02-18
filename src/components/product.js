@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const detailProduct = {
+const Product = {
     async render() {
         const { data } = await axios.get("http://localhost:3001/products");
         return /* html */`
@@ -18,4 +18,4 @@ const detailProduct = {
             `;
     },
 };
-export default detailProduct;
+export default Product;

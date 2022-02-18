@@ -1,6 +1,6 @@
 import Navigo from "navigo";
 import HomePage from "./page/home";
-import AboutPage from "./page/about";
+import BlogPage from "./page/blog";
 import ProductPage from "./page/product";
 import DetailPage from "./page/detailpage";
 import contactPage from "./page/contact";
@@ -22,8 +22,8 @@ router.on({
         printf(HomePage);
         // console.log(HomePage);
     },
-    "/about": () => {
-        printf(AboutPage);
+    "/blog": () => {
+        printf(BlogPage);
     },
     "/product": () => {
         printf(ProductPage);

@@ -1,11 +1,12 @@
 import Banner from "../components/banner";
 import Footer from "../components/footer";
 import Headers from "../components/header";
+import Product from "../components/product";
 
 const ProductPage = {
-    render() {
+    async render() {
         return `
-        <div class="max-w-5xl mx-auto">
+        <div class="">
             <header>
                 ${Headers.render()}
             </header>
@@ -13,9 +14,11 @@ const ProductPage = {
                 <div class="banner">
                     ${Banner.render()}
                 </div>
-                <h2>Product Page</h2>
+                <div class="news">
+                    ${await Product.render()}
+                </div>
             </main>
-            <footer>
+            <footer class="site-footer">
                 ${Footer.render()}
             </footer>
         </div>
