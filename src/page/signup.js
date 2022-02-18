@@ -1,3 +1,5 @@
+import { signup } from "../api/user";
+
 const SignUpPage = {
     render() {
         return `
@@ -15,14 +17,14 @@ const SignUpPage = {
                     Đăng ký
                     </h2>
                 </div>
-                <form class="mt-8 space-y-6" action="#" method="POST">
+                <form class="mt-8 space-y-6" action="#" method="POST" id="formSignup">
                     <input type="hidden" name="remember" value="true" />
                     <div class="rounded-md shadow-sm -space-y-px">
                     <div>
                         <p class="my-2 text-sm">Email</p>
                         <label for="email-address" class="sr-only">Email</label>
                         <input
-                        id="email-address"
+                        id="email"
                         name="email"
                         type="email"
                         autocomplete="email"
@@ -35,9 +37,9 @@ const SignUpPage = {
                         <p class="my-2 text-sm">Tên tài khoản</p>
                         <label for="email-address" class="sr-only">Tên tài khoản</label>
                         <input
-                        id="email-address"
-                        name="email"
-                        type="email"
+                        id="username"
+                        name="username"
+                        type="text"
                         autocomplete="email"
                         required
                         class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -58,44 +60,31 @@ const SignUpPage = {
                         />
                     </div>
                     <div>
-                        <p class="my-2 text-sm">Nhập lại mật khẩu</p>
-                        <label for="password" class="sr-only">Nhập lại mật khẩu</label>
-                        <input
-                        id="repassword"
-                        name="repassword"
-                        type="repassword"
-                        autocomplete="current-repassword"
-                        required
-                        class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Nhập lại mật khẩu"
-                        />
-                    </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                    <div class="flex items-center">
-                        <input
-                        id="remember-me"
-                        name="remember-me"
-                        type="checkbox"
-                        class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                        />
-                        <label for="remember-me" class="ml-2 block text-xs text-gray-900">
-                        Đồng ý với điều khoản của chúng tôi
-                        </label>
-                    </div>
-                    </div>
-                    <div>
                     <button
                         type="submit"
-                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mt-4"
                     >
                         Đăng ký
                     </button>
+                    <div>
+                        <p class="my-2 text-sm text-center">Bạn đã có tài khoản <a href="/#signin" class="text-blue-700 normal-case">Đăng nhập ngay</a></p>
+                    </div>
                     </div>
                 </form>
                 </div>
             </div>
         `;
+    },
+    afterRender() {
+        const formSignup = document.querySelector("#formSignup");
+        formSignup.addEventListener("submit", (e) => {
+            e.preventDefault();
+            signup({
+                email: document.querySelector("#email").value,
+                username: document.querySelector("#username").value,
+                password: document.querySelector("#password").value,
+            });
+        });
     },
 };
 export default SignUpPage;

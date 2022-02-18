@@ -69,10 +69,13 @@ const SignInPage = {
                     </div>
                     <div>
                     <button
-                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mt-4"
                     >
                         Đăng nhập
                     </button>
+                    </div>
+                    <div>
+                        <p class="text-center my-2 text-sm">Bạn chưa có tài khoản <a href="/#signup" class="text-blue-700 normal-case">Đăng ký ngay</a></p>
                     </div>
                 </form>
                 </div>
