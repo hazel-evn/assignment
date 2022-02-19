@@ -1,5 +1,4 @@
 import navAdmin from "../../../components/navAdmin";
-import Data from "../table";
 
 const adminNews = {
     render() {
@@ -37,7 +36,6 @@ const adminNews = {
                     <div
                         class="border-4 border-dashed border-gray-200 rounded-lg h-96"
                     >
-                        ${Data.render()}
                     </div>
                     </div>
                     <!-- /End replace -->

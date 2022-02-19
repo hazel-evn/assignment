@@ -5,8 +5,8 @@ import Headers from "../components/header";
 const BlogPage = {
     render() {
         return `
-        <div class="max-w-5xl mx-auto">
-            <header>
+        <div>
+            <header class="header">
                 ${Headers.render()}
             </header>
             <main>
