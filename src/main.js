@@ -7,9 +7,9 @@ import contactPage from "./page/contact";
 import SignInPage from "./page/signin";
 import SignUpPage from "./page/signup";
 import Dashboard from "./page/admin/dashboard";
-import adminNews from "./page/admin/news";
-import addNews from "./page/admin/news/add";
 import user from "./page/admin/user";
+import adminProduct from "./page/admin/product";
+import addNewProduct from "./page/admin/product/add";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 const printf = async (content, id) => {
@@ -44,11 +44,11 @@ router.on({
     "/admin/dashboard": () => {
         printf(Dashboard);
     },
-    "/admin/news": () => {
-        printf(adminNews);
+    "/admin/product": () => {
+        printf(adminProduct);
     },
-    "/admin/news/add": () => {
-        printf(addNews);
+    "/admin/product/add": () => {
+        printf(addNewProduct);
     },
     "/admin/user": () => {
         printf(user);

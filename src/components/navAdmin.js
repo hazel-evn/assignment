@@ -4,13 +4,13 @@ const navAdmin = {
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                    <img src="./src/images/logo_black.png" alt="BB Store" class="w-24"/>
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
+                        <li>
                             <a class="js-arrow" href="/#/admin/dashboard">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
@@ -49,13 +49,7 @@ const navAdmin = {
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
-                                        </div>
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="account-dropdown__footer">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
-                                            </div>
+                                            <i class="zmdi zmdi-power"></i>        Logout
                                         </div>
                                     </div>
                                 </div>
@@ -64,6 +58,7 @@ const navAdmin = {
                     </div>
                 </div>
             </header>
+        </div>
             <!-- HEADER DESKTOP-->
         `;
     },
