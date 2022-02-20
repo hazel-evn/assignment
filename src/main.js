@@ -18,6 +18,18 @@ const printf = async (content, id) => {
     document.querySelector("#products").innerHTML = await content.render(id);
     if (content.afterRender) await content.afterRender(id);
 };
+router.on("/admin/*", () => {}, {
+    before: (done) => {
+        const userId = JSON.parse(localStorage.getItem("user")).id;
+        // nếu userId === 1 thì tôi mới render
+        if (userId === 1) {
+            done();
+        } else {
+            // ngược thì lại redirect về trang chủ
+            document.location.href = "/";
+        }
+    },
+});
 router.on({
 // Nếu user truy cập vào đường dẫn thì user sẽ làm cái việc gì đấy
     "/": () => {
