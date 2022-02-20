@@ -14,18 +14,18 @@ const DetailPage = {
                 ${Headers.render()}
             </header>
             <main>
-                <div class="flex mx-auto">
+                <div class="container flex mx-auto justify-evenly px-48 py-24">
                     <div>
-                        <img src="${data.img}" alt="" />
+                        <img src="${data.img}" width="350px" />
                     </div>
                     <div>
-                        <h1>${data.name}</h1>
-                        <h2>${data.desc}<h2>
-                        <p>${data.price}</p>
-                        <div>
-                            <input type="number" id="inputValue" class="border border-gray-500"/>
+                        <h3>${data.name}</h3>
+                        <p class="py-5">${data.desc}<p>
+                        <h4 class="text-red-600">${data.price}</h4>
+                        <div class="py-10">
+                            <input type="number" id="inputValue" class="border border-red-500"/>
                         </div>
-                        <button id="btnAddToCart" class="block bg-red-700 text-white text-2xl uppercase w-full py-5 my-5">Thêm vào giỏ hàng</button>
+                        <button id="btnAddToCart" class="block bg-red-500 text-white  uppercase w-full py-3 my-5">Thêm vào giỏ hàng</button>
                     </div> 
                 </div>
             </main>
