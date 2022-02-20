@@ -30,7 +30,7 @@
 }
 .product_detail {
   max-width: 200px;
-  max-height: 400px;
+  max-height: 600px;
   margin: 0 5px;
 }
 .product_detail img {
@@ -42,10 +42,19 @@
   font-weight: 500;
   text-align: center;
 }
+.product_detail p {
+  margin-top: -15px;
+}
 .product_detail a {
   text-transform: unset;
   height: 40px;
   font-size: 18px;
+  color: #1e1e27;
+}
+.product_detail a:hover {
+  text-decoration: none;
+  color: #ff0004;
+  opacity: 0.5;
 }
 .product_detail button {
   width: 100%;

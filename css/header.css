@@ -27,6 +27,10 @@ a {
 }
 .header_auth ion-icon {
   font-size: 30px;
+  color: black;
+}
+.header_menu a {
+  color: black;
 }
 .header_menu a:hover {
   color: #f03030;

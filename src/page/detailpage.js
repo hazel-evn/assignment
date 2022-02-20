@@ -7,7 +7,7 @@ const DetailPage = {
         const { data } = await get(id);
         return `
         <div >
-            <header>
+            <header class="header">
                 ${Headers.render()}
             </header>
             <main>
