@@ -1,64 +1,18 @@
 {
   "products": [
     {
-      "createdAt": "2022-01-15T02:34:50.705Z",
-      "title": "Mới update title này",
-      "price": 100,
-      "id": "7"
+      "name": "anh",
+      "img": "http://res.cloudinary.com/locnv-fpoly/image/upload/v1645342848/assignment/utpaxbhcheotxexst9em.jpg",
+      "desc": "anh                                        ",
+      "price": "123123",
+      "id": 3
     },
     {
-      "createdAt": "2022-01-15T01:54:24.955Z",
-      "title": "Mới update title này",
-      "price": 200,
-      "id": "8"
-    },
-    {
-      "createdAt": "2022-01-15T02:36:13.715Z",
-      "title": "Mới update title này",
-      "price": 200,
-      "id": "9"
-    },
-    {
-      "createdAt": "2022-01-14T12:38:27.738Z",
-      "title": "Mới update title này",
-      "price": 200,
-      "id": "10"
-    },
-    {
-      "createdAt": "2022-01-14T17:58:26.446Z",
-      "title": "Mới update title này",
-      "price": 200,
-      "id": "11"
-    },
-    {
-      "createdAt": "2022-01-15T02:21:11.908Z",
-      "title": "Mới update title này",
-      "price": 200,
-      "id": "13"
-    },
-    {
-      "createdAt": "2022-01-14T11:14:02.843Z",
-      "title": "Mới update title này",
-      "price": 200,
-      "id": "14"
-    },
-    {
-      "createdAt": "2022-01-15T00:11:58.958Z",
-      "title": "Mới update title này",
-      "price": 200,
-      "id": "15"
-    },
-    {
-      "createdAt": "2022-01-15T04:39:49.775Z",
-      "title": "Mới update title này",
-      "price": 200,
-      "id": "16"
-    },
-    {
-      "createdAt": "2022-01-10T20:33:27.477Z",
-      "title": "Mới update title này",
-      "price": 200,
-      "id": "19"
+      "name": "áo khoác",
+      "img": "http://res.cloudinary.com/locnv-fpoly/image/upload/v1645344910/assignment/t8ujlmh8mfc3jysk1twb.jpg",
+      "desc": " áo khoác này đẹp vcl                                       ",
+      "price": "1327398172",
+      "id": 4
     }
   ],
   "users": [

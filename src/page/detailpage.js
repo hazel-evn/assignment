@@ -11,10 +11,15 @@ const DetailPage = {
                 ${Headers.render()}
             </header>
             <main>
-                <div>
-                    <h1>${data.title}</h1>
-                    <img src="${data.img}" alt="" />
-                    <p>${data.price}</p>
+                <div class="flex mx-auto">
+                    <div>
+                        <img src="${data.img}" alt="" />
+                    </div>
+                    <div>
+                        <h1>${data.title}</h1>
+                        <p>${data.price}</p>
+                    </div>
+                    
                 </div>
             </main>
             <footer class="site-footer">

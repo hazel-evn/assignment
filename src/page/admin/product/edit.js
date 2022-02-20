@@ -1,13 +1,11 @@
-import axios from "axios";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
-import { add } from "../../../api/product";
-import adminProduct from ".";
+import { get, update } from "../../../api/product";
 import navAdmin from "../../../components/navAdmin";
-import { reRender } from "../../../utils";
 
-const addNewProduct = {
-    render() {
+const editProduct = {
+    async render(id) {
+        const { data } = await get(id);
         return /* html */`
             ${navAdmin.render()}
                     <div class="container">
@@ -21,7 +19,7 @@ const addNewProduct = {
                                 </button>
                             </a>
                         </div>
-                        <form id="news-add-product">
+                        <form id="edit-product">
                             <div class="">
                                 <!-- Replace with your content -->
                                 <div class="px-4 sm:px-0">
@@ -33,6 +31,7 @@ const addNewProduct = {
                                         name="product-name"
                                         id="product-name"
                                         class="h-8 w-1/2 border-solid border-2 border-red-500 rounded-lg outline-none"
+                                        value="${data.name}"
                                         />
                                         <p class="text-sm font-weight my-2">Chi tiết sản phẩm</p>
                                         <textarea
@@ -41,6 +40,7 @@ const addNewProduct = {
                                         id="product-detail"
                                         cols="65" rows="5"
                                         class="border-solid border-2 border-red-500 rounded-lg outline-none"
+                                        value="${data.desc}"
                                         >
                                         </textarea>
                                         <p class="text-sm font-weight my-2">Giá sản phẩm</p>
@@ -49,6 +49,7 @@ const addNewProduct = {
                                         name="product-price"
                                         id="product-price"
                                         class="h-8 w-1/2 border-solid border-2 border-red-500 rounded-lg outline-none"
+                                        value="${data.price}"
                                         />
 
                                         <p class="text-sm font-weight my-2">Ảnh sản phẩm</p>
@@ -65,47 +66,21 @@ const addNewProduct = {
             </div>
         `;
     },
-    afterRender() {
-        const formAdd = document.querySelector("#news-add-product");
-        const imgPost = document.querySelector("#images");
-        const imgPreview = document.querySelector("#img-preview");
-        const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/locnv-fpoly/image/upload";
-        const CLOUDINARY_PRESET = "assignment";
-        let imgLink = [];
-        imgPost.addEventListener("change", (e) => {
-            imgPreview.src = URL.createObjectURL(e.target.files[0]);
-        });
-        // Submit form
-        formAdd.addEventListener("submit", async (e) => {
+    afterRender(id) {
+        const formEdit = document.querySelector("#edit-product");
+        formEdit.addEventListener("submit", (e) => {
             e.preventDefault();
-            // lấy giá trị input file
-            const file = document.querySelector("#images").files[0];
-            if (file) {
-                // tạo object và gắn giá trị vào các thuộc tính của formData
-                const formData = new FormData();
-                formData.append("file", file);
-                formData.append("upload_preset", CLOUDINARY_PRESET);
-                // call API cloudinary để đẩy ảnh lên
-                const { data } = await axios.post(CLOUDINARY_API, formData, {
-                    headers: {
-                        "Content-Type": "application/form-data",
-                    },
-                });
-                imgLink = data.url;
-            }
-            // call api thêm bài viết
-            add({
+            update({
+                id,
                 name: document.querySelector("#product-name").value,
-                //  Nếu imgLink có giá trị thì sẽ lấy giá trị của imgLink ngược lại thì rỗng
-                img: imgLink || "",
-                desc: document.querySelector("#product-detail").value,
+                img: document.querySelector("#images").value,
                 price: document.querySelector("#product-price").value,
-            }).then(() => {
-                toastr.success("Thêm sản phẩm mới thành công");
-            });
-            window.location.href = "/#/admin/product";
-            reRender(adminProduct, "#products");
+                desc: document.querySelector("#product-desc").value,
+            }).then(
+                toastr.success("Edit sản phẩm thành công"),
+                document.location.href = "/#/admin/product",
+            );
         });
     },
 };
-export default addNewProduct;
+export default editProduct;
