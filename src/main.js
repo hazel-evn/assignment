@@ -11,6 +11,7 @@ import user from "./page/admin/user";
 import adminProduct from "./page/admin/product";
 import addNewProduct from "./page/admin/product/add";
 import editProduct from "./page/admin/product/edit";
+import CartPage from "./page/cart";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 const printf = async (content, id) => {
@@ -33,6 +34,7 @@ router.on({
         // const { id } = data;
         printf(DetailPage, data.id);
     },
+    "/cart": () => { printf(CartPage); },
     "/contact": () => {
         printf(contactPage);
     },
