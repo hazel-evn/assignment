@@ -12,7 +12,7 @@ const addNewProduct = {
             ${navAdmin.render()}
                     <div class="container">
                        <div class="flex py-10 ml-7">
-                            <a href="/admin/product">
+                            <a href="/#/admin/product">
                                 <button
                                     type="button"
                                     class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -78,14 +78,11 @@ const addNewProduct = {
         // Submit form
         formAdd.addEventListener("submit", async (e) => {
             e.preventDefault();
-            // lấy giá trị input file
             const file = document.querySelector("#images").files[0];
             if (file) {
-                // tạo object và gắn giá trị vào các thuộc tính của formData
                 const formData = new FormData();
                 formData.append("file", file);
                 formData.append("upload_preset", CLOUDINARY_PRESET);
-                // call API cloudinary để đẩy ảnh lên
                 const { data } = await axios.post(CLOUDINARY_API, formData, {
                     headers: {
                         "Content-Type": "application/form-data",
@@ -93,7 +90,6 @@ const addNewProduct = {
                 });
                 imgLink = data.url;
             }
-            // call api thêm bài viết
             add({
                 name: document.querySelector("#product-name").value,
                 //  Nếu imgLink có giá trị thì sẽ lấy giá trị của imgLink ngược lại thì rỗng
@@ -102,8 +98,8 @@ const addNewProduct = {
                 price: document.querySelector("#product-price").value,
             }).then(() => {
                 toastr.success("Thêm sản phẩm mới thành công");
+                window.location.href = "/#/admin/product";
             });
-            window.location.href = "/#/admin/product";
             reRender(adminProduct, "#products");
         });
     },

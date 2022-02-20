@@ -1,7 +1,9 @@
 import toastr from "toastr";
+import axios from "axios";
 import "toastr/build/toastr.min.css";
 import { get, update } from "../../../api/product";
 import navAdmin from "../../../components/navAdmin";
+import { reRender } from "../../../utils";
 
 const editProduct = {
     async render(id) {
@@ -10,7 +12,7 @@ const editProduct = {
             ${navAdmin.render()}
                     <div class="container">
                        <div class="flex py-10 ml-7">
-                            <a href="/admin/product">
+                            <a href="/#admin/product">
                                 <button
                                     type="button"
                                     class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -40,8 +42,7 @@ const editProduct = {
                                         id="product-detail"
                                         cols="65" rows="5"
                                         class="border-solid border-2 border-red-500 rounded-lg outline-none"
-                                        value="${data.desc}"
-                                        >
+                                        >${data.desc}
                                         </textarea>
                                         <p class="text-sm font-weight my-2">Giá sản phẩm</p>
                                         <input
@@ -54,10 +55,10 @@ const editProduct = {
 
                                         <p class="text-sm font-weight my-2">Ảnh sản phẩm</p>
                                         <input type="file" name="images" id="images" value="" /> <br>
-                                        <img src="https://thumbs.dreamstime.com/b/no-thumbnail-image-placeholder-forums-blogs-websites-148010362.jpg" id="img-preview" width="200px"/>
+                                        <img src="${data.img}" id="img-preview" width="200px"/>
                                         <button
                                                 class="inline-flex items-center px-4 py-2 mt-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                        >Thêm
+                                        >Cập nhật
                                         </button>
                                     </div>
                                 </div>
@@ -68,18 +69,42 @@ const editProduct = {
     },
     afterRender(id) {
         const formEdit = document.querySelector("#edit-product");
-        formEdit.addEventListener("submit", (e) => {
+        const imgPost = document.querySelector("#images");
+        const imgPreview = document.querySelector("#img-preview");
+        const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/locnvfpoly/image/upload";
+        const CLOUDINARY_PRESET = "assignment";
+        let imgLink = "";
+
+        // Preview image
+        imgPost.addEventListener("change", (e) => {
+            imgPreview.src = URL.createObjectURL(e.target.files[0]);
+        });
+        // Submit form
+        formEdit.addEventListener("submit", async (e) => {
             e.preventDefault();
+            const file = document.querySelector("#images").files[0];
+            if (file) {
+                const formData = new FormData();
+                formData.append("file", file);
+                formData.append("upload_preset", CLOUDINARY_PRESET);
+                const { data } = await axios.post(CLOUDINARY_API, formData, {
+                    headers: {
+                        "Content-Type": "application/form-data",
+                    },
+                });
+                imgLink = data.url;
+            }
             update({
                 id,
                 name: document.querySelector("#product-name").value,
-                img: document.querySelector("#images").value,
+                img: imgLink || imgPreview.src,
+                desc: document.querySelector("#product-detail").value,
                 price: document.querySelector("#product-price").value,
-                desc: document.querySelector("#product-desc").value,
-            }).then(
-                toastr.success("Edit sản phẩm thành công"),
-                document.location.href = "/#/admin/product",
-            );
+            });
+            toastr.success("Cập nhật sản phẩm thành công");
+            window.location.href = "/#/admin/product";
+
+            reRender(editProduct, "#app");
         });
     },
 };

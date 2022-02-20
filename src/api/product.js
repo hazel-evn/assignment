@@ -18,5 +18,5 @@ export const remove = (id) => {
 };
 export const update = (post) => {
     const url = `/products/${post.id}`;
-    return instance.put(url);
+    return instance.put(url, post);
 };

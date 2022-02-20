@@ -10,6 +10,7 @@ import Dashboard from "./page/admin/dashboard";
 import user from "./page/admin/user";
 import adminProduct from "./page/admin/product";
 import addNewProduct from "./page/admin/product/add";
+import editProduct from "./page/admin/product/edit";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 const printf = async (content, id) => {
@@ -49,6 +50,9 @@ router.on({
     },
     "/admin/product/add": () => {
         printf(addNewProduct);
+    },
+    "/admin/product/:id/edit": ({ data }) => {
+        printf(editProduct, data.id);
     },
     "/admin/user": () => {
         printf(user);

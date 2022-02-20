@@ -5,7 +5,7 @@ import Footer from "../components/footer";
 const DetailPage = {
     async render(id) {
         const { data } = await get(id);
-        return `
+        return /* html */`
         <div >
             <header class="header">
                 ${Headers.render()}
@@ -16,7 +16,8 @@ const DetailPage = {
                         <img src="${data.img}" alt="" />
                     </div>
                     <div>
-                        <h1>${data.title}</h1>
+                        <h1>${data.name}</h1>
+                        <h2>${data.desc}<h2>
                         <p>${data.price}</p>
                     </div>
                     
