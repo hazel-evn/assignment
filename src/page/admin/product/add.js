@@ -10,7 +10,7 @@ const addNewProduct = {
     render() {
         return /* html */`
             ${navAdmin.render()}
-                    <div class="container">
+                    <div class="container mx-auto pl-48">
                        <div class="flex py-10 ml-7">
                             <a href="/#/admin/product">
                                 <button

@@ -2,10 +2,10 @@
   "products": [
     {
       "id": 4,
-      "name": "áo khoác 1222",
+      "name": "áo khoác update",
       "img": "http://res.cloudinary.com/locnv-fpoly/image/upload/v1645344910/assignment/t8ujlmh8mfc3jysk1twb.jpg",
-      "desc": " áo khoác này đẹp vcl      11",
-      "price": "1327398172"
+      "desc": " áo khoác này đẹp vcl update\n                                        \n                                        ",
+      "price": "1233102"
     },
     {
       "name": "213",
@@ -27,13 +27,6 @@
       "desc": "2                                        ",
       "price": "2",
       "id": 7
-    },
-    {
-      "name": "1",
-      "img": "http://res.cloudinary.com/locnv-fpoly/image/upload/v1645364631/assignment/gc416rrgwsbie2b9fjze.jpg",
-      "desc": "1                                        ",
-      "price": "11",
-      "id": 8
     }
   ],
   "users": [

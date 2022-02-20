@@ -10,7 +10,7 @@ const editProduct = {
         const { data } = await get(id);
         return /* html */`
             ${navAdmin.render()}
-                    <div class="container">
+                    <div class="container mx-auto pl-48">
                        <div class="flex py-10 ml-7">
                             <a href="/#admin/product">
                                 <button
@@ -22,7 +22,7 @@ const editProduct = {
                             </a>
                         </div>
                         <form id="edit-product">
-                            <div class="">
+                            <div>
                                 <!-- Replace with your content -->
                                 <div class="px-4 sm:px-0">
                                 <div    
