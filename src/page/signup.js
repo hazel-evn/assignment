@@ -2,7 +2,7 @@ import { signup } from "../api/user";
 
 const SignUpPage = {
     render() {
-        return `
+        return /* html */`
                 <div
                 class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
                 >
