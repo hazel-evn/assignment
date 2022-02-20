@@ -16,7 +16,7 @@ import CartPage from "./page/cart";
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 const printf = async (content, id) => {
     document.querySelector("#products").innerHTML = await content.render(id);
-    if (content.afterRender) await content.afterRender();
+    if (content.afterRender) await content.afterRender(id);
 };
 router.on({
 // Nếu user truy cập vào đường dẫn thì user sẽ làm cái việc gì đấy

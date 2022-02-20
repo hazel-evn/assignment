@@ -47,17 +47,15 @@ const CartPage = {
             btn.addEventListener("click", () => {
                 if (btn.classList.contains("btn-increase")) {
                     increaseQuantity(id, () => {
-                        reRender(CartPage, "#app");
-                        toastr.success("Tăng số lượng thành công");
+                        reRender(CartPage, "#product");
                     });
                 } else if (btn.classList.contains("btn-decrease")) {
                     decreaseQuantity(id, () => {
-                        reRender(CartPage, "#app");
-                        toastr.success("Giảm số lượng thành công");
+                        reRender(CartPage, "#product");
                     });
                 } else {
                     removeItemInCart(id, () => {
-                        reRender(CartPage, "#app");
+                        reRender(CartPage, "#product");
                         toastr.success("Xóa sản phẩm thành công");
                     });
                 }

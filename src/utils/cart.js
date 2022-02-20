@@ -12,7 +12,6 @@ export const addTocart = (newProduct, next) => {
     } else {
         existProduct.quantity += newProduct.quantity;
     }
-
     localStorage.setItem("cart", JSON.stringify(cart));
     next();
 };

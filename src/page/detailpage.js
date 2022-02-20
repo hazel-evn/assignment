@@ -1,8 +1,9 @@
 import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 import { get } from "../api/product";
+import { addTocart } from "../utils/cart";
 import Headers from "../components/header";
 import Footer from "../components/footer";
-import { addTocart } from "../utils/cart";
 
 const DetailPage = {
     async render(id) {
@@ -22,12 +23,10 @@ const DetailPage = {
                         <h2>${data.desc}<h2>
                         <p>${data.price}</p>
                         <div>
-                            <input type="number" id="inputValue" class="border border-gray-500" value="1"/>
+                            <input type="number" id="inputValue" class="border border-gray-500"/>
                         </div>
                         <button id="btnAddToCart" class="block bg-red-700 text-white text-2xl uppercase w-full py-5 my-5">Thêm vào giỏ hàng</button>
-                    </div>
-                    
-                    
+                    </div> 
                 </div>
             </main>
             <footer class="site-footer">

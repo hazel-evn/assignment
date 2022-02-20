@@ -9,7 +9,7 @@ const adminProduct = {
         return /* html */ `
         ${navAdmin.render()}
                     <div class="container">
-                        <div class="flex py-10">
+                        <div class="flex py-10 ml-52">
                             <a href="/#/admin/product/add">
                                 <button
                                     type="button"
@@ -19,7 +19,7 @@ const adminProduct = {
                                 </button>
                             </a>
                         </div>
-                        <table class="">
+                        <table class="mx-auto">
                             <thead class="bg-gray-50">
                                 <tr>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">STT</th>

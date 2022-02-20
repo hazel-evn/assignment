@@ -2,10 +2,10 @@ const navAdmin = {
     render() {
         return /* html */`
         <!-- PAGE CONTAINER-->
-        <div class="container-full flex items-center justify-around h-75 bg-gray-700">
+        <div class="container-full flex items-center justify-around h-16 bg-gray-700">
             <!-- HEADER DESKTOP-->
                     <div class="menu">
-                            <ul class="flex flex-row pt-3 gap-5">
+                            <ul class="flex flex-row gap-5">
                                 <li>
                                     <a class="text-white" href="/#/admin/dashboard">
                                         Dashboard</a>
