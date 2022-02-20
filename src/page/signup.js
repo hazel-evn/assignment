@@ -8,11 +8,13 @@ const SignUpPage = {
                 >
                 <div class="max-w-md w-full space-y-8">
                 <div>
-                    <img
-                    class="mx-auto h-12 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                    alt="Workflow"
-                    />
+                    <a href="/#" class="block">
+                        <img
+                        class="mx-auto h-24 w-auto"
+                        src="../src/images/logo_black.png"
+                        alt="Workflow"
+                        />
+                    </a>
                     <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
                     Đăng ký
                     </h2>
