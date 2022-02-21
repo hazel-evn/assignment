@@ -4,7 +4,7 @@
       "id": 4,
       "name": "áo khoác update",
       "img": "http://res.cloudinary.com/locnv-fpoly/image/upload/v1645344910/assignment/t8ujlmh8mfc3jysk1twb.jpg",
-      "desc": " áo khoác này đẹp vcl update\n                                        \n                                        ",
+      "desc": " áo khoác này đẹp quá update\n                                        ",
       "price": "1233102"
     },
     {
@@ -35,6 +35,12 @@
       "password": "$2a$10$q04kJfrrZYqka5ZVOpiwFenpqGbdLFel1g4gmiNrnvtC8hwD3uPK6",
       "username": "admin",
       "id": 1
+    },
+    {
+      "email": "user@gmail.com",
+      "password": "$2a$10$fl0ZWUeWuXf6quNhsrlW7.2T9dUm4QUQ9oYd/zhdc.UCuEPhvtjYi",
+      "username": "user",
+      "id": 2
     }
   ]
 }

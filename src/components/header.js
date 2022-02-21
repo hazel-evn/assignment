@@ -1,8 +1,8 @@
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
-import { reRender } from "../utils";
+// import { reRender } from "../utils";
 
-const Headers = {
+const Header = {
     render() {
         return `
             <div class="header_logo">
@@ -20,7 +20,7 @@ const Headers = {
             </div>
              ${localStorage.getItem("user") ? `<div class="header_auth flex items-center justify-between w-28">
                 <a href="/#cart"><ion-icon name="cart-outline"></ion-icon></a>
-                <a class="text-black cursor-pointer mb-2" id="logout">Logout</a> 
+                <a class="text-black cursor-pointer mb-2" id="logout" class="btn-logOut">Logout</a> 
             </div>
             ` : `
             <div class="header_auth">
@@ -38,10 +38,9 @@ const Headers = {
         // logout
         const logout = document.querySelector("#logout");
         logout.addEventListener("click", () => {
-            toastr.success("Đăng xuất thành công");
+            toastr.success("Bạn đã đăng xuất thành công");
             localStorage.removeItem("user");
-            reRender(Headers, "#header");
         });
     },
 };
-export default Headers;
+export default Header;

@@ -79,9 +79,6 @@ const SignInPage = {
                         Đăng nhập
                     </button>
                     </div>
-                    <div>
-                         <p class="my-2 text-sm text-center">Bạn chưa tài khoản <a href="/#signup" class="text-blue-700 normal-case">Đăng ký ngay</a></p>
-                    </div>
                 </form>
                 </div>
             </div>
