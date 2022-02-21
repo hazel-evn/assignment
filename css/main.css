@@ -5,21 +5,6 @@
   font-weight: 500;
   text-transform: uppercase;
 }
-.product_title:before {
-  display: block;
-  position: absolute;
-  top: 81%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-  width: 60px;
-  height: 5px;
-  background: #fe4c50;
-  content: "";
-}
 .product {
   display: flex;
   justify-content: flex-start;
