@@ -1,6 +1,6 @@
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
-// import { reRender } from "../utils";
+import { reRender } from "../utils";
 
 const Header = {
     render() {
@@ -33,13 +33,14 @@ const Header = {
     },
 
     afterRender() {
-        const user = JSON.parse(localStorage.getItem("user"));
-        document.querySelector("#account-name").innerHTML = `Xin chào ${user.username}`;
+        // const user = JSON.parse(localStorage.getItem("user"));
+        // document.querySelector("#account-name").innerHTML = `Xin chào ${user.username}`;
         // logout
         const logout = document.querySelector("#logout");
         logout.addEventListener("click", () => {
             toastr.success("Bạn đã đăng xuất thành công");
             localStorage.removeItem("user");
+            reRender(Header, "#header");
         });
     },
 };

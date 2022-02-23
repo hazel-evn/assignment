@@ -5,7 +5,7 @@ import Headers from "../components/header";
 const contactPage = {
     render() {
         return `
-            <header class="header">
+            <header class="header" id="header">
                 ${Headers.render()}
             </header>
             <main>

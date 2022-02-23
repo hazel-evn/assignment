@@ -1,14 +1,14 @@
 import Banner from "../components/banner";
 import Product from "../components/product";
-import Headers from "../components/header";
 import Footer from "../components/footer";
+import Header from "../components/header";
 
 const HomePage = {
     async render() {
         return /* html */`
         <div>
-            <div class="header">
-                ${Headers.render()}
+            <div class="header" id="header">
+                ${Header.render()}
             </div>
             <main>
                 <div class="banner">
@@ -23,6 +23,9 @@ const HomePage = {
             </footer>
         </div>
         `;
+    },
+    afterRender() {
+        Header.afterRender();
     },
 };
 export default HomePage;

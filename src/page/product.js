@@ -7,7 +7,7 @@ const ProductPage = {
     async render() {
         return `
         <div class="">
-            <header class="header">
+            <header class="header" id="header">
                 ${Headers.render()}
             </header>
             <main>
